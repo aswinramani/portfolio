@@ -1,21 +1,11 @@
-# pfs
+Portfolio WebSite
 
-> A Vue.js project
+Hi there! I am currently developing my portfolio website.
 
-## Build Setup
+### Software and Libraries
+This project uses the following software and javascript libraries:
 
-``` bash
-# install dependencies
-npm install
+- [Vue](https://vuejs.org/)
+- [BootStrap + Vue ](https://bootstrap-vue.js.org/)
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For further details, please check out [package.json](https://github.com/aswinramani/portfolio/blob/master/package.json) file. 
