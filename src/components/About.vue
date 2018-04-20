@@ -1,25 +1,43 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-4 offset-2">
-        <img src="../assets/pic.jpeg" class="float-right"/>
-      </div>
-      <div class="col-6">
-        <h3 class="text-left">Aswin Ramani</h3>
+      <!-- <div class="col-4"></div> -->
+      <div class="col-4 offset-3">
+        <h2 class="text-center">Aswin Ramani</h2>
+        <p>Hello! I am a self-taught developer who loves building machine learning driven products and web applications. I would love to combine my professional experience in web development and passion for machine learning to contribute to this ongoing revolution in computing.</p>
+        <p>I have a diverse set of skills ranging from web development, cloud deployment to applying machine learning in computer vision and finance domains. </p>    
+        <p><img src="../assets/pic.jpeg"/></p>
+        <p>
+          <a><font-awesome-icon :icon="github" size="lg"/></a>
+          <a><font-awesome-icon :icon="linkedin" size="lg"/></a>
+        </p>
         <hr/>
-        <p class="text-left"> Hi, there I am a Software Engineer who specializes in machine learning and web development</p>
-      </div>
+      </div>  
+      <!-- <div class="col-4"></div> -->
     </div>
   </div>  
 </template>
 
 <script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import {faGithub, faLinkedin} from '@fortawesome/fontawesome-free-brands'
 export default {
   name: 'About',
   data () {
     return {
       msg: 'Welcome to My Personal Site'
     }
+  },
+  computed: {
+    github () {
+      return faGithub
+    },
+    linkedin (){
+      return faLinkedin
+    }
+  },  
+  components: {
+    FontAwesomeIcon
   }
 }
 </script>
@@ -41,7 +59,7 @@ a {
   color: #42b983;
 }
 img {
-  width: 50%;
+  width: 30%;
   border-radius: 50%;
 }
 </style>

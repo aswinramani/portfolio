@@ -1,4 +1,4 @@
-Portfolio WebSite
+Portfolio Website
 
 Hi there! I am currently developing my portfolio website.
 
