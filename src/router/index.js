@@ -1,21 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import About  from '@/components/About'
-import Hello from '@/components/Hello'
+import home  from '@/components/home'
+import projects  from '@/components/projects'
+import contact  from '@/components/contact'
 
 Vue.use(Router)
-
-export default new Router({
+var routerObj = new Router({
   routes: [
     {
       path: '/',
-      name: 'About',
-      component: About
+      name: 'home',
+      component: home
     },
     {
-      path: '/hello',
-      name: 'Hello',
-      component: Hello
+      path: '/projects',
+      name: 'projects',
+      component: projects
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: contact
     }
   ]
 })
+// console.log("routerObj ", routerObj)
+// console.log("routerObj ", routerObj.options.routes)
+export default routerObj

@@ -1,5 +1,5 @@
 <template>
-  <div class="row pws-about">
+  <div id="home" class="row">
     <div class="col-2 offset-1">
       <img src="../assets/pic.jpeg"/>
     </div>
@@ -14,18 +14,13 @@
 
 <script>
 export default {
-  name: 'About',
-  // data() {
-  //   return {
-  //     margin
-  //   }
-  // }
-}
+  name: 'home'
+}  
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.pws-about {
+#home {
   position: absolute;
   top: 35%;
   min-width: 70%;

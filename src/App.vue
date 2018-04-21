@@ -1,20 +1,18 @@
 <template>
   <div id="app" class="container"> 
-    <!-- <div class="pws-navbar"> -->
-      <navbar></navbar>
-    <!-- </div> -->
-    <!-- <div class="pws-content"> -->
+      <pfsHeader></pfsHeader>
       <router-view></router-view> 
-    <!-- </div> -->
+      <pfsFooter></pfsFooter>
   </div>
 </template>
 <script>
-// import navbar from '@'
-import navbar  from '@/components/Navbar'
+import pfsHeader  from '@/components/pfsHeader'
+import pfsFooter  from '@/components/pfsFooter'
 export default {
   name: 'app',
   components:{
-    navbar
+    pfsHeader,
+    pfsFooter
   }
 }
 </script>
@@ -26,8 +24,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: 50px;
-}
-.pws-navbar {
-  margin: 1%
 }
 </style>
