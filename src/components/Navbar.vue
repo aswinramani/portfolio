@@ -1,20 +1,18 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-1 offset-4 float-right">
-        <h6>Home</h6>
+    <div class="row pws-nav">
+      <div class="col-5">
+        <p class="text-left">Aswin Ramani</p>
+      </div>  
+      <div class="col-1 offset-2">
+        <p class="text-right">Home</p>
       </div>
-      <div class="col-1 float-left">
-        <h6>Skills</h6>
+      <div class="col-1 offset-1">
+        <p class="text-right">Projects</p>
       </div>
-      <div class="col-1 float-left">
-        <h6>Projects</h6>
+      <div class="col-1 offset-1">
+        <p class="text-right">Contact</p>
       </div>
-      <div class="col-1 float-left">
-        <h6>Contact</h6>
-      </div>    
     </div>
-  </div>  
 </template>
 <script>
 </script>

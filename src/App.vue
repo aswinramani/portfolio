@@ -1,9 +1,11 @@
 <template>
-  <div id="app"> 
-    <router-view></router-view>
-    <div class="pws-navbar">
+  <div id="app" class="container"> 
+    <!-- <div class="pws-navbar"> -->
       <navbar></navbar>
-    </div> 
+    <!-- </div> -->
+    <!-- <div class="pws-content"> -->
+      <router-view></router-view> 
+    <!-- </div> -->
   </div>
 </template>
 <script>
@@ -23,9 +25,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 2%;
+  margin: 50px;
 }
 .pws-navbar {
-  margin: 10px
+  margin: 1%
 }
 </style>
