@@ -2,7 +2,7 @@
     <header>
       <b-navbar toggleable="md" type="light" variant="gray">
 
-        <b-navbar-toggle target="nav_collapse" id="toggle-button"></b-navbar-toggle>
+        <b-navbar-toggle target="nav_collapse" id="toggle-button"><font-awesome-icon :icon="toggleIcon"/></b-navbar-toggle>
 
         <b-navbar-brand><router-link :to="{ path: '/' }">Aswin Ramani</router-link></b-navbar-brand>
 
@@ -20,8 +20,24 @@
     </header>
 </template>
 <script>
+import Vue from 'vue'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import faChevronCircleDown from '@fortawesome/fontawesome-free-solid/faChevronCircleDown'
 export default {
-  name: "pfsHeader"
+  name: 'pfsHeader',
+  data () {
+    return {
+      screenWidth: this.innerWidth
+    }
+  },
+  computed: {
+    toggleIcon () {
+      return faChevronCircleDown
+    }
+  },  
+  components: {
+    FontAwesomeIcon
+  }
 }
 </script>
 <style scoped>
@@ -41,6 +57,11 @@ a:hover{
   padding: 0px;
 }
 #toggle-button:focus {
-    outline:none;
+  outline:none;
 }
+.router-link-exact-active {
+  /* color: #17a2b8; */
+  color: #007bff;
+}
+
 </style>
