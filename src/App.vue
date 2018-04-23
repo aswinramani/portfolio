@@ -1,8 +1,8 @@
 <template>
-  <div id="app" class="container"> 
+  <div id="app"> 
       <pfsHeader></pfsHeader>
-      <router-view></router-view> 
-      <pfsFooter></pfsFooter>
+      <!-- <router-view></router-view> 
+      <pfsFooter></pfsFooter> -->
   </div>
 </template>
 <script>
@@ -21,8 +21,8 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin: 50px;
+  /* margin: 50px; */
 }
 </style>
