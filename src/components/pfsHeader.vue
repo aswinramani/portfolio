@@ -1,13 +1,15 @@
 <template>
-    <header>
-      <b-navbar toggleable="md" type="light" variant="gray">
+    <header id="pfsHeader" v-on:click="toggler($event)">
+      <b-navbar toggleable="sm" type="light" variant="gray">
 
-        <b-navbar-toggle target="nav_collapse" id="toggle-button"><font-awesome-icon :icon="toggleIcon"/></b-navbar-toggle>
+        <b-navbar-toggle target="nav_collapse" id="toggle-button">
+            <font-awesome-icon v-if="expanded" :icon="toggleUp"/>
+            <font-awesome-icon v-else :icon="toggleDown"/>
+        </b-navbar-toggle>
 
         <b-navbar-brand><router-link :to="{ path: '/' }">Aswin Ramani</router-link></b-navbar-brand>
 
         <b-collapse is-nav id="nav_collapse">
-
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
             <b-nav-item class="text-left"><router-link :to="{ path: '/' }">Home</router-link></b-nav-item>
@@ -22,28 +24,45 @@
 <script>
 import Vue from 'vue'
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import faChevronCircleDown from '@fortawesome/fontawesome-free-solid/faChevronCircleDown'
+import {faChevronCircleDown, faChevronCircleUp} from '@fortawesome/fontawesome-free-solid'
 export default {
   name: 'pfsHeader',
+  clicked: false,
   data () {
     return {
-      screenWidth: this.innerWidth
+      expanded: false
     }
   },
   computed: {
-    toggleIcon () {
-      return faChevronCircleDown
+    toggleUp (){
+      return faChevronCircleUp;
+    },
+    toggleDown (){
+      return faChevronCircleDown;
     }
   },  
   components: {
     FontAwesomeIcon
+  },
+  methods: {
+    toggler: function (event) {
+      if(window.innerWidth < 576){
+        var toggleList = event.path.filter(function(e){ return e.id == "toggle-button"})
+        var collElem = document.getElementById("nav_collapse")
+        if (toggleList.length > 0){
+            this._data.expanded = toggleList["0"].attributes[4].nodeValue == "false" 
+        }else{
+          collElem.classList.remove("show");
+          this._data.expanded = false;
+          this.$router.go()
+        }
+      }  
+    }
+    
   }
 }
 </script>
 <style scoped>
-/* header {
-  background-color: #f9f9f9;
-} */
 a {
   color: #2c3e50;  
 }
