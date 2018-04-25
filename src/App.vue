@@ -22,9 +22,11 @@ export default {
   },
   methods: {
     mainClick: function (event) {
-      var header = event.path.filter(function(e){ return e.id == "pfsHeader"})
-      if (this.$children["0"].expanded && header.length < 1){
-        this.$children["0"].$router.go()
+      if(window.innerWidth < 576){
+        var header = event.path.filter(function(e){ return e.id == "pfsHeader"})
+        if (this.$children["0"].expanded && header.length < 1){
+          this.$children["0"].$router.go()
+        }  
       }  
     }
   }

@@ -59,7 +59,6 @@ export default {
           this.$router.go()
         }
       }
-      console.log("from header", this._data.expanded)  
     }
   }
 }
