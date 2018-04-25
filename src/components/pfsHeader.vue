@@ -1,5 +1,5 @@
 <template>
-    <header id="pfsHeader" v-on:click="toggler($event)">
+    <div id="pfsHeader" v-on:click="toggler($event)">
       <b-navbar toggleable="sm" type="light" variant="gray">
 
         <b-navbar-toggle target="nav_collapse" id="toggle-button">
@@ -19,7 +19,7 @@
 
         </b-collapse>
       </b-navbar>
-    </header>
+    </div>
 </template>
 <script>
 import Vue from 'vue'
@@ -30,7 +30,8 @@ export default {
   clicked: false,
   data () {
     return {
-      expanded: false
+      expanded: false,
+      collElem: document.getElementById("nav_collapse")
     }
   },
   computed: {
@@ -46,6 +47,7 @@ export default {
   },
   methods: {
     toggler: function (event) {
+      this.clicked = true;
       if(window.innerWidth < 576){
         var toggleList = event.path.filter(function(e){ return e.id == "toggle-button"})
         var collElem = document.getElementById("nav_collapse")
@@ -56,9 +58,9 @@ export default {
           this._data.expanded = false;
           this.$router.go()
         }
-      }  
+      }
+      console.log("from header", this._data.expanded)  
     }
-    
   }
 }
 </script>
