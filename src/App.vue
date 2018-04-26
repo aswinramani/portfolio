@@ -56,7 +56,8 @@ main {
   height: 100%;
 }
 footer {
-  padding: 20px;
+  width: 100%;
+  padding: 20px 0px 20px 0px;
 }
 
 
