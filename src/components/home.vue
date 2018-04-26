@@ -1,26 +1,36 @@
 <template>
-  <div id="home" class="row">
-    <div class="col-2 offset-1">
-      <img src="../assets/pic.jpeg"/>
-    </div>
-    <div class="col-9">
-      <p class="text-left">Hi! I am a self-taught developer, who loves applying </p>
-      <p class="text-left">machine learning to computer vision, finance domains and </p>
-      <p class="text-left">building scalable web applications.</p>
-      <!-- <p class="text-left">driven products and web applications.</p> -->
-    </div>
-  </div>  
+  <b-container id="home">
+      <b-row id="content-home">
+        <b-col md="1" offset-md="2" class="text-center"><img src="../assets/pic.jpeg"/></b-col>
+        <b-col md="8" class="text-left">
+          <!-- <article> -->
+            <ul>
+              <p>
+                Hi! I am a self-taught developer, who loves applying machine learning to computer vision, finance domains and building scalable web applications.
+              </p>  
+              <br/>
+            </ul>
+          <!-- </article> -->
+        </b-col>
+      </b-row>  
+  </b-container>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  methods:{
+    homeClick(){
+      console.log("this", this.$router)
+      //v-on:click="homeClick"
+    }
+  }
 }  
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#home {
+/* #home {
   position: absolute;
   top: 35%;
   min-width: 70%;
@@ -29,20 +39,33 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 li {
   display: inline-block;
   margin: 0 10px;
 }
 a {
   color: #42b983;
+}*/
+#home {
+  padding: 20px 0px 20px 0px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+#content-home {
+  padding: 10px 0px 0px 0px;
+}
+ul {
+  list-style-type: none;
+}
+p {
+  margin-top: 20px;
+  margin-left: 20px;
 }
 img {
   border-radius: 50%;
-  width: 50%;
+  /* width: 50%; */
   min-width: 75px;
-}
+  max-width: 100px;
+} 
+
 </style>

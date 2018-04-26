@@ -1,12 +1,52 @@
 <template>
-  <div>
-    <p class="text-center">This site is being developed using Vue and in beta version 0.0.1 </p>
+  <div class="text-center">
+    <span>Powered by<a id="vue" href="https://vuejs.org/" target="_blank"><font-awesome-icon :icon="vuejs"/></a></span> | 
+    <span><font-awesome-icon :icon="copyright"/> Aswin Ramani 2018</span> |
+    <span><a id="linked-in" href="https://www.linkedin.com/in/aswin-ramani/" target="_blank"><font-awesome-icon :icon="linkedIn"/></a></span> |
+    <span><a id="github" href="https://github.com/aswinramani?tab=repositories" target="_blank"><font-awesome-icon :icon="github"/></a></span>
   </div>
 </template>
-<script></script>
+<script>
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import {faVuejs, faLinkedin, faGithub} from '@fortawesome/fontawesome-free-brands'
+import faCopyright from '@fortawesome/fontawesome-free-solid/faCopyright'
+
+export default {
+  name: 'pfsFooter',
+  computed: {
+    vuejs() {
+      return faVuejs;
+    },
+    copyright() {
+      return faCopyright;
+    },
+    linkedIn() {
+      return faLinkedin;
+    },
+    github() {
+      return faGithub;
+    }
+  },  
+  components: {
+    FontAwesomeIcon
+  }
+}  
+</script>
 <style>
-footer {
-  position: absolute;
-  bottom: 3%
+span {
+  padding: 0px 5px 0px 5px;
 }
+#vue, #linked-in, #github {
+  color: black;
+}
+#vue:hover {
+  color: #00a025;
+}
+#linked-in:hover {
+  color: #006097;
+}
+#github:hover {
+  color: gray;
+}
+
 </style>
