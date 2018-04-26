@@ -13,13 +13,6 @@
       </b-col>  
     </b-row>  
   </b-container>
-
-  <!-- <div class="text-center">
-    <span>Powered by<a id="vue" href="https://vuejs.org/" target="_blank"><font-awesome-icon :icon="vuejs"/></a></span> | 
-    <span><font-awesome-icon :icon="copyright"/> Aswin Ramani 2018</span> |
-    <span><a id="linked-in" href="https://www.linkedin.com/in/aswin-ramani/" target="_blank"><font-awesome-icon :icon="linkedIn"/></a></span> |
-    <span><a id="github" href="https://github.com/aswinramani?tab=repositories" target="_blank"><font-awesome-icon :icon="github"/></a></span>
-  </div> -->
 </template>
 <script>
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
