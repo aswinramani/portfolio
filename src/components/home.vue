@@ -1,18 +1,18 @@
 <template>
   <b-container id="home">
-      <b-row id="content-home">
-        <b-col md="1" offset-md="2" class="text-center"><img src="../assets/pic.jpeg"/></b-col>
-        <b-col md="8" class="text-left">
-          <!-- <article> -->
-            <ul>
-              <p>
-                Hi! I am a self-taught developer, who loves applying machine learning to computer vision, finance domains and building scalable web applications.
-              </p>  
-              <br/>
-            </ul>
-          <!-- </article> -->
-        </b-col>
-      </b-row>  
+    <b-row id="content-home">
+      <b-col md="1" offset-md="2" class="text-center"><img src="../assets/pic.jpeg"/></b-col>
+      <b-col md="8" class="text-left">
+        <!-- <article> -->
+          <ul>
+            <p>
+              Hi! I am a self-taught developer, who loves applying machine learning to computer vision, finance domains and building scalable web applications.
+            </p>  
+            <br/>
+          </ul>
+        <!-- </article> -->
+      </b-col>
+    </b-row>  
   </b-container>
 </template>
 

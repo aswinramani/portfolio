@@ -18,6 +18,10 @@ var routerObj = new Router({
       component: projects
     },
     {
+      path: '/projects/:id', 
+      component: projects
+    },
+    {
       path: '/contact',
       name: 'contact',
       component: contact
