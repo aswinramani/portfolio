@@ -5,9 +5,9 @@
           <article id="project-content">
             <h4>{{project.title}}</h4>
             <p>{{project.description}}</p>
-            <b-button size="sm" variant="default">
-              <router-link :to="{ name: 'details', params: { id:  project.name}}">User</router-link>
-            </b-button>
+            <router-link :to="{ name: 'details', params: { id:  project.name}}">
+              <b-button size="sm" variant="primary">Project Details</b-button>
+            </router-link>  
           </article>
         </b-col>
       </b-row>
