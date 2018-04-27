@@ -12,8 +12,8 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-item class="text-left"><router-link :to="{ path: '/' }">Home</router-link></b-nav-item>
-          <b-nav-item class="text-left"><router-link v-bind:to="'projects'">Projects</router-link></b-nav-item>
-          <b-nav-item class="text-left"><router-link v-bind:to="'contact'">Contact</router-link></b-nav-item>
+          <b-nav-item class="text-left"><router-link :to="{ path: '/projects'}">Projects</router-link></b-nav-item>
+          <b-nav-item class="text-left"><router-link :to="{ path: '/contact'}">Contact</router-link></b-nav-item>
         </b-navbar-nav>
 
       </b-collapse>
