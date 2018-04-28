@@ -7,11 +7,11 @@
           {{project.title}}
         </template>
         <article>
-          <div class="heading">Background information</div>
+          <div class="heading"><span class="marker-left">Background information</span></div>
             <p>{{project.background}}</p>
-          <div class="heading">Solution</div>
+          <div class="heading"><span class="marker-left">Solution</span></div>
             <p>{{project.solution}}</p>
-          <div class="heading">Software and Libraries</div>
+          <div class="heading"><span class="marker-left">Software and Libraries</span></div>
             <p>{{project.lib}}</p>
         </article>
         <router-link :to="{ name: 'projects'}" >  
@@ -48,12 +48,20 @@ export default {
   border-bottom-width: 1px;
 }
 .heading {
-  font-weight: 300;
-  font-size: 1.2rem;
+  font-weight: 200;
+  font-size: 18px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-p {
-  font-size: 0.7em;
+.marker-left {
+  border-left-style: solid;
+  border-left-color: #20c997;
+  border-left-width: 4px;
+}
+p {  
+  font-size: 1.0em;
+  font-weight: 100;
+  padding-left: 10px;
+
 }
 </style>
