@@ -8,8 +8,11 @@
         </template>
         <article>
           <div class="heading">Background information</div>
+            <p>{{project.background}}</p>
           <div class="heading">Solution</div>
+            <p>{{project.solution}}</p>
           <div class="heading">Software and Libraries</div>
+            <p>{{project.lib}}</p>
         </article>
         <router-link :to="{ name: 'projects'}" >  
             <b-button size="md" variant="primary">Back</b-button>
@@ -40,10 +43,17 @@ export default {
 <style scoped>
 .display-3{
   font-size: 3.5rem;
+  border-bottom-style: solid;
+  border-bottom-color: #ced4da;
+  border-bottom-width: 1px;
 }
 .heading {
   font-weight: 300;
   font-size: 1.2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-
+p {
+  font-size: 0.7em;
+}
 </style>
