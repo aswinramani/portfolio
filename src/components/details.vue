@@ -14,9 +14,11 @@
           <div class="heading"><span class="marker-left">Software and Libraries</span></div>
             <p>{{project.lib}}</p>
         </article>
-        <router-link :to="{ name: 'projects'}" >  
-            <b-button size="md" variant="primary">Back</b-button>
-        </router-link>
+        <div id="back-btn">
+          <router-link :to="{ name: 'projects'}">  
+              <b-button size="md" variant="primary">Back</b-button>
+          </router-link>
+        </div>  
       </b-jumbotron>
       </b-col>
     </b-row>
@@ -47,6 +49,13 @@ export default {
   border-bottom-color: #ced4da;
   border-bottom-width: 1px;
 }
+article {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: #ced4da;
+  border-bottom-width: 1px;
+}
 .heading {
   font-weight: 200;
   font-size: 18px;
@@ -59,9 +68,12 @@ export default {
   border-left-width: 4px;
 }
 p {  
-  font-size: 1.0em;
+  font-size: 15px;
   font-weight: 100;
   padding-left: 10px;
 
+}
+#back-btn {
+  padding-top: 10px;
 }
 </style>
