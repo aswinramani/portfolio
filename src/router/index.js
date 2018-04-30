@@ -7,6 +7,7 @@ import details  from '@/components/details'
 
 Vue.use(Router)
 var routerObj = new Router({
+  mode: 'history',
   routes: [
     {path: '/', name: 'home', component: home},
     {path: '/projects', name: 'projects', component: projects},

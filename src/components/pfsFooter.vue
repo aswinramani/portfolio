@@ -1,15 +1,15 @@
 <template>
   <b-container>
-    <b-row>
+    <!-- <b-row>
       <b-col md class="text-center">
         <span>Powered by <a id="vue" href="https://vuejs.org/" target="_blank"><font-awesome-icon :icon="vuejs"/></a></span> |
         <span><a id="github" href="https://github.com/aswinramani?tab=repositories" target="_blank"><font-awesome-icon :icon="github"/></a></span> 
         <span><a id="linked-in" href="https://www.linkedin.com/in/aswin-ramani/" target="_blank"><font-awesome-icon :icon="linkedIn"/></a></span>
       </b-col>
-    </b-row>
+    </b-row> -->
     <b-row id="copyright">
       <b-col md class="text-center">
-        <span><font-awesome-icon :icon="copyright"/> Aswin Ramani 2018</span>
+        <span><font-awesome-icon :icon="copyright"/> Aswin Ramani {{year}}</span>
       </b-col>  
     </b-row>  
   </b-container>
@@ -21,6 +21,11 @@ import faCopyright from '@fortawesome/fontawesome-free-solid/faCopyright'
 
 export default {
   name: 'pfsFooter',
+  data() {
+    return {
+      year: new Date().getFullYear()
+    }
+  },
   computed: {
     vuejs() {
       return faVuejs;
