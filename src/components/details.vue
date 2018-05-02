@@ -10,11 +10,18 @@
           <div class="heading"><span class="marker-left">Background information</span></div>
             <p>{{project.background}}</p>
           <div class="heading"><span class="marker-left">Solution</span></div>
-            <p>{{project.solution}}</p>
+            <ul v-for="(value, key) in project.solution" :key="key">
+              <li>{{value}}</li>
+            </ul>  
           <div class="heading"><span class="marker-left">Software and Libraries</span></div>
-            <p>{{project.lib}}</p>
+            <ul id="lib" v-for="(value, key) in project.lib" :key="key">
+              <li>{{value}}</li>
+            </ul>
         </article>
         <div id="back-btn">
+          <a v-bind:href="project._link" target="_blank">
+            <b-button size="md" variant="outline-info" onclick="this.blur();">View Repository</b-button>
+          </a>
           <router-link :to="{ name: 'projects'}">  
               <b-button size="md" variant="primary">Back</b-button>
           </router-link>
@@ -26,6 +33,8 @@
 </template>
 <script>
 import projects  from '@/components/projects'
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import {faVuejs, faLinkedin, faGithub} from '@fortawesome/fontawesome-free-brands'
 export default {
   name: "projectdetail",
   components: {
@@ -39,6 +48,14 @@ export default {
       msg: "Details",
       project: project[0]
     }
+  },
+  computed: {
+    github() {
+      return faGithub;
+    }
+  },  
+  components: {
+    FontAwesomeIcon
   }
 }
 </script>
@@ -73,7 +90,11 @@ p {
   padding-left: 10px;
 
 }
+#lib {
+  list-style-type: circle;
+}
 #back-btn {
   padding-top: 10px;
 }
+
 </style>
