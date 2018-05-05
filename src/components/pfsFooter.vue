@@ -9,7 +9,7 @@
     </b-row> -->
     <b-row id="copyright">
       <b-col md class="text-center">
-        <span><font-awesome-icon :icon="copyright"/> Aswin Ramani {{year}}</span>
+        <span><font-awesome-icon :icon="copyright"/> aswinramani.com {{year}}</span>
       </b-col>  
     </b-row>  
   </b-container>

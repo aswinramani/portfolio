@@ -1,13 +1,19 @@
 <template>
   <b-container class="projects">
       <b-row class="justify-content-md-center" v-for="project in projects" :key="project.id">
-        <b-col col md="8" id="project-wrapper">
-          <article id="project-content">
+        <b-col md="8" class="project-wrapper">
+          <article class="project-content" v-if="project.isValid">
             <h4>{{project.title}}</h4>
             <p>{{project.overview}}</p>
             <router-link :to="{ name: 'details', params: { name: project.name } }">
               <b-button size="sm" variant="primary">Project Details</b-button>
             </router-link>  
+          </article>
+          <article v-else>
+            <p>Projects mentioned above were the recent ones, please check my repository for a complete list of projects that I have worked on. </p>
+            <a v-bind:href="project._link" target="_blank">
+              <b-button size="sm" variant="primary" onclick="this.blur();">GITHUB</b-button>
+            </a>  
           </article>
         </b-col>
       </b-row>
@@ -29,7 +35,7 @@ export default {
           solution: {
             12: "Generated a template image based on the shape of the ground control point for searching ground control points.",
             13: "Implemented function to read all inputs from the source directory.",
-            14: "Rescaled input images using image pyramids.",
+            14: "Generated image pyramids for multiscale detection.",
             15: "Applied rotational transformations to detect ground control point irrespective of its orientation.",
             16: "Implemented template matching technique for detecting ground control points and determine their coordinates.",
             17: "Implemented function to output the locations in a CSV file."
@@ -41,6 +47,7 @@ export default {
             21: "Pandas",
             22: "Matplotlib"
           },
+          isValid: true,
           _link: "https://github.com/aswinramani/skyd/tree/object-detection"
         },
         {
@@ -48,18 +55,16 @@ export default {
           name: "stock-price-prediction", 
           title: "Stock Price Predictor", 
           overview: "Developed a stock price predictor that makes use of past trading data to produce projected estimates. The dataset that would be used to develop the machine learning model will predict the adjusted close price of a stock, which is a numerical value. The prediction would be made for the next seven trading days.", 
-          background:"Many investment firms have been using financial models for predicting stock prices to yield profits. The stock prediction has been performed for quite some time and mainly there are two types of stock analysis: fundamental analysis and technical analysis. Fundamental Analysis is a complete top to the bottom approach where the investors tend to study factors like overall economy, country's economy, sector analysis and company analysis to compare the current price of a stock against their own calculated intrinsic value which could possibly give them a good indication of whether a stock is undervalued or overvalued. Technical analysis assumes that the fundamental analysis has already been accounted for a company's current stock price and hence it predicts a stock's price based on its past movements. This type of investment strategy is generally used by short-term investors, where holding periods could range anywhere from seconds to weeks. Applying machine learning for stock prediction is a very popular and a profitable real-world problem. Hence, there's no surprise that many would be interested in finding a great prediction algorithm to make tons of money.",
+          background:"Many investment firms use financial models for predicting stock prices to yield profits. There are two types of stock analysis: fundamental analysis and technical analysis. Fundamental Analysis is a complete top to the bottom approach where the investors tend to study factors like overall economy, country's economy, sector analysis and company analysis to compare the current price of a stock against their own calculated intrinsic value which could possibly give them a good indication of whether a stock is undervalued or overvalued. Technical analysis assumes that the fundamental analysis has already been accounted for a company's current stock price and hence it predicts a stock's price based on its past movements. This type of investment strategy is generally used by short-term investors, where holding periods could range anywhere from seconds to weeks. Applying machine learning for stock prediction is a very popular and a profitable real-world problem. Hence, there's no surprise that many would be interested in finding a great prediction algorithm to make tons of money.",
           solution: {
-            23: "Implemented training interface where the users would be allowed to choose stock tickers of their choice and training period.",
-            24: "Implemented querying interface where users could retrieve the predictions of stocks which are the subset of the ones mentioned in training interface.",
-            25: "Used Quandl for retrieving stock data.",
-            26: "Implemented function to compute leading and lagging technical indicators.",
-            27: "Applied logarithm transformation to highly skewed features. As rule of thumb skewness is considered as high if it is either greater than 1 (positive skewness) or lesser than -1 (negative skewness).",
-            28: "Implemented a function which would calculate the absolute value of negatively skewed feature and then multiply by -1 because the log of 0 is undefined.",
-            29: "Applied normalization by taking the minimum and maximum of each feature and scaling them to 0 and 1.",
-            30: "Implemented a function to choose the best model based on the r-squared score.",
-            31: "Implemented a function to apply grid search technique to further optimize the best model and return the best estimator based on the r-squared scores of optimized and unoptimized models. If the best estimator is LinearSVR, then grid search wouldn't be applied.",
-            32: "Implemented function to output the predictions in a CSV file."
+            23: "Implemented user-friendly interface where users can specify stock tickers of their choice and retrieve price estimations.",
+            24: "Used Quandl for retrieving stock data.",
+            25: "Implemented function to compute leading and lagging technical indicators.",
+            26: "Applied logarithm transformation to highly skewed features. ",
+            27: "Applied normalization by taking the minimum and maximum of each feature and scaling them to 0 and 1.",
+            28: "Implemented a function to choose the best model based on the r-squared score.",
+            29: "Implemented a function to apply grid search technique to further optimize the best model and return the best estimator based on the r-squared scores of optimized and unoptimized models. If the best estimator is LinearSVR, then grid search wouldn't be applied.",
+            30: "Implemented function to output the predictions in a CSV file."
           }, 
           lib:{
             33: "Python 2",
@@ -69,6 +74,7 @@ export default {
             36: "TA-Lib",
             37: "Arrow"
           },
+          isValid: true,
           _link: "https://github.com/aswinramani/MLND-Capstone"
         },
         {
@@ -76,10 +82,31 @@ export default {
           name: "image-classification",
           title: "Image Classification",
           overview: "Developed a Convolutional Neural Network based dog breed classifier that accepts images from the user as input and predicts the breed.", 
-          background:"background", 
-          solution: "solution",
-          lib:"lib",
+          background:"Applying machine learning to image classification is a task of assigning a label to an input image from a known set of categories.  Standard algorithms which treat images as vectors are unaware of the spatial information making them inefficient in image classifications task, unlike convolutional neural networks which are built for elucidating the patterns in multi-dimensional data as they understand that the image pixels that are close in proximity to each other are more heavily related than the ones that are far apart. The goal of this project to identify dog breed from a known set of 133 dog breeds.", 
+          solution: {
+            38: "Transformed input images into 4D tensors because Keras CNN's require 4D array as input.",
+            39: "Implemented multilayered convolutional layers each having max-pooling layers between them. Convolutional layers provide information regarding distinct features. Max-pooling layers reduce the computation cost by decreasing the parameters by taking the maximum value out of a subregion (2 by 2 filter) to determine the relative location of a specific feature to other features instead of exact location.",
+            40: "Added dropout layers to reduce overfitting problem by dropping out some activation sets randomly and setting them to zero, thereby forcing the network to classify correct for new data.",
+            41: "Added flatten layer to convert the array to vector. ",
+            42: "Added dense layer with relu activation function to help the network to train faster by changing the negative activations to zero.",
+            43: "Added a dense layer with softmax activation function to compute the probabilities for 133 dog breeds.",
+            44: "Used transfer learning using ResNet-50 To reduce training time and to improve testing accuracy. ResNet-50 contains the necessary weights to detect the various dog breed which makes it easier to achieve better accuracy at predicting.",
+            45: "Implemented a function to detect human faces using Haar Cascade classifiers.",
+            46: "Implemented a function to display human detected, if the input image contains human or dog detected depending on the input image and outputs the predicted breed."
+          },
+          lib:{
+            47: "Python 2",
+            48: "Keras (tensorflow backend)",
+            49: "OpenCV",
+            50: "Numpy",
+            51: "Scikit-Learn"
+          },
+          isValid: true,
           _link: "https://github.com/aswinramani/dog-project"
+        },{
+          id: 4,
+          isValid: false,
+          _link: "https://github.com/aswinramani?tab=repositories"
         }
       ]
     }
@@ -91,11 +118,11 @@ export default {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#project-wrapper {
+.project-wrapper {
   padding: 15px;
   background-color: #f7f7f7;
 }
-#project-content {
+.project-content {
   padding: 20px 0px 20px 0px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
