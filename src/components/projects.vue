@@ -33,7 +33,7 @@ export default {
           overview: "Developed a algorithm to detect objects within images captured by drone. ", 
           background:"Many large infrastructure companies have adopted to use drones for land surveillance as they provide a higher level of absolute accuracy in precision mapping and reduced man-hours compared to traditional land survey methods. To determine a position of a point in a map with respect to the real world,  physical markers called ground control points are placed on the ground as per the areas of interest. The coordinates of the ground control points are then fed into drone-mapping software to determine the absolute position.  This process of detecting the ground control points and determining the absolution position manually is complex and time-consuming.  Since ground control points have specific dimensions (which may vary across companies), it is possible to develop an algorithm to detect these markers within images by applying computer vision techniques.",   
           solution: {
-            12: "Generated a template image based on the shape of the ground control point for searching ground control points.",
+            12: "Generated a template image based on the shape of the ground control point for detection.",
             13: "Implemented function to read all inputs from the source directory.",
             14: "Generated image pyramids for multiscale detection.",
             15: "Applied rotational transformations to detect ground control point irrespective of its orientation.",
